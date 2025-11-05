@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorCet.MainPage"
+             Title="Dort Islem">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android,iOS" Value="16,32,16,16" />
+            <On Platform="WinUI,MacCatalyst,Tizen" Value="24" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <VerticalStackLayout Spacing="16">
+        
+        <Entry x:Name="InputEntry"
+               Keyboard="Numeric"
+               Placeholder="Sayi Gir"
+               HorizontalOptions="Fill" />
+        
+        <Grid ColumnDefinitions="*,*,*,*,*">
+            <Button Text="+"
+                    Grid.Column="0"
+                    Clicked="ToplamayaTiklaninca" />
+            <Button Text="-"
+                    Grid.Column="1"
+                    Clicked="CikarmayaTiklaninca" />
+            <Button Text="×"
+                    Grid.Column="2"
+                    Clicked="CarpTiklaninca" />
+            <Button Text="÷"
+                    Grid.Column="3"
+                    Clicked="BolTiklaninca" />
+            <Button Text="="
+                    Grid.Column="4"
+                    Clicked="EsittirTiklaninca" />
+        </Grid>
+        
+        <Label x:Name="sonucLabel"
+               Text="Sonuc:"
+               FontSize="18"
+               HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
